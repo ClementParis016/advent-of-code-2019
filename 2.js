@@ -25,3 +25,13 @@ var process = (input, noun, verb) => {
 
 // Part 1
 var result = process(data, 12, 2)
+
+// Part 2
+// With trial an error I found out that the increasing/decrasing the verb by 1 increased/decreased the result by 1.
+// So, I put the verb at 0 and started playing with noun and found out that the result increase/decrease was correlated to it.
+// I tried some values for verb until I found the first value that would give a result higher than expected.
+// I picked that value minus 1, calculated the difference with the expected result: that difference is actually the verb.
+var noun = 53;
+var verb = 98;
+var result = process(data, noun, verb) // -> 19690720
+var answer = 100 * noun + verb // -> 5398
