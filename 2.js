@@ -1,9 +1,9 @@
 var data = $0.textContent.replace('\n', '')
 
-var process = input => {
+var process = (input, noun, verb) => {
   var p = input.split(',').map(i => parseInt(i, 10))
-  p.splice(1, 1, 12)
-  p.splice(2, 1, 2)
+  p.splice(1, 1, noun)
+  p.splice(2, 1, verb)
 
   for (var i = 0; i < p.length; i = i + 4) {
     var cs = p.slice(i, i + 4)
@@ -20,7 +20,8 @@ var process = input => {
     }
   }
 
-  return p
+  return p[0]
 };
 
-var result = process(data)[0]
+// Part 1
+var result = process(data, 12, 2)
